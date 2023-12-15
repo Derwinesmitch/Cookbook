@@ -29,6 +29,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.dataStorageService.fetchRecipes().subscribe();
   }
 
+  // this method is used when logout button is clicked which calls the logout method
+  onLogout() {
+    this.authService.logout();
+  }
+
   ngOnDestroy(): void {
     this.userSub.unsubscribe();
   }
