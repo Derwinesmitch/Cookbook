@@ -48,4 +48,9 @@ export class AuthComponent {
     );
     form.reset();
   }
+
+  // this method sets the error to null, this makes the alert message close
+  onHandleError() {
+    this.error = null;
+  }
 }
