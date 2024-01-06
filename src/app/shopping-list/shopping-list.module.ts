@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 import { ShoppingEditComponent } from "./shopping-edit/shopping-edit.component";
 import { ShoppingListComponent } from "./shopping-list.component";
 import { FormsModule } from "@angular/forms";
+import { MatCardModule } from "@angular/material/card";
 
 @NgModule({
   declarations: [ShoppingListComponent, ShoppingEditComponent],
@@ -11,6 +12,7 @@ import { FormsModule } from "@angular/forms";
     CommonModule,
     RouterModule.forChild([{ path: "", component: ShoppingListComponent }]),
     FormsModule,
+    MatCardModule,
   ],
 })
 export class ShoppingListModule {}
