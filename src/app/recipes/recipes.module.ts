@@ -9,6 +9,10 @@ import { RecipeItemComponent } from "./recipe-list/recipe-item/recipe-item.compo
 import { RecipeStartComponent } from "./recipe-start/recipe-start.component";
 import { RecipeEditComponent } from "./recipe-edit/recipe-edit.component";
 import { RecipesRoutingModule } from "./recipes-routing.module";
+import { MatCardModule } from "@angular/material/card";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatInputModule } from "@angular/material/input";
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -24,6 +28,10 @@ import { RecipesRoutingModule } from "./recipes-routing.module";
     CommonModule,
     ReactiveFormsModule,
     RecipesRoutingModule,
+    MatCardModule,
+    MatMenuModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
 })
 export class RecipesModule {}
