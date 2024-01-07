@@ -1,0 +1,15 @@
+.mat-card {
+  margin-bottom: 20px;
+}
+
+.mat-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mat-card-image {
+  max-height: 100px;
+  max-width: 100%;
+  object-fit: cover;
+}
