@@ -1,18 +1,25 @@
 <mat-card>
-  <div class="row">
-    <div class="col-xs-10">
+  <mat-card-header>
+    <mat-card-title> Shopping List </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div>
       <app-shopping-edit></app-shopping-edit>
       <hr />
-      <ul class="list-group">
-        <a
-          class="list-group-item"
+      <mat-list>
+        <mat-list-item
           style="cursor: pointer"
           *ngFor="let ingredient of ingredients; let i = index"
           (click)="onEditItem(i)"
         >
-          {{ ingredient.name }} ({{ ingredient.amount }})
-        </a>
-      </ul>
+          <div mat-list-avatar></div>
+          <div mat-line class="ingredient-details">
+            <span class="ingredient-name">{{ ingredient.name }}</span>
+            <span class="ingredient-amount">{{ ingredient.amount }}</span>
+          </div>
+        </mat-list-item>
+      </mat-list>
     </div>
-  </div>
+  </mat-card-content>
 </mat-card>
