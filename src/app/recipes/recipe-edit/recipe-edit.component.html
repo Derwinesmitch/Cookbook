@@ -15,12 +15,7 @@
     <mat-card-content>
       <mat-form-field>
         <label for="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          formControlName="name"
-          class="form-control"
-        />
+        <input type="text" id="name" formControlName="name" matInput />
       </mat-form-field>
       <mat-form-field>
         <label for="imagePath">Image Url</label>
@@ -28,7 +23,7 @@
           type="text"
           id="imagePath"
           formControlName="imagePath"
-          class="form-control"
+          matInput
           #imagePath
         />
       </mat-form-field>
@@ -40,7 +35,7 @@
         <textarea
           type="text"
           id="description"
-          class="form-control"
+          matInput
           formControlName="description"
           rows="6"
         ></textarea>
@@ -52,10 +47,10 @@
           style="margin-top: 10px"
         >
           <mat-form-field>
-            <input type="text" class="form-control" formControlName="name" />
+            <input type="text" matInput formControlName="name" />
           </mat-form-field>
           <mat-form-field>
-            <input type="number" formControlName="amount" />
+            <input type="number" matInput formControlName="amount" />
           </mat-form-field>
           <button type="button" (click)="onDeleteIngredient(i)">X</button>
           <button type="button" (click)="onAddIngredient()">
