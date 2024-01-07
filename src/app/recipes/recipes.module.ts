@@ -13,6 +13,8 @@ import { MatCardModule } from "@angular/material/card";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatListModule } from "@angular/material/list";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     MatMenuModule,
     MatInputModule,
     MatFormFieldModule,
+    MatListModule,
+    MatIconModule,
   ],
 })
 export class RecipesModule {}
