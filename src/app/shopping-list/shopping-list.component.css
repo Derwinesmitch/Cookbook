@@ -1,0 +1,49 @@
+mat-card {
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #26e4e4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-content {
+  background-color: #70a52a;
+  padding: 16px;
+}
+
+mat-card-content {
+  padding: 16px;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+}
+
+mat-list-item {
+  cursor: pointer;
+  padding: 8px;
+  transition: background-color 0.3s;
+}
+
+mat-list-item:hover {
+  background-color: #cfbf2fc7;
+}
+
+.ingredient-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ingredient-name {
+  flex: 1;
+  font-weight: bold;
+}
+
+.ingredient-amount {
+  margin-left: 16px;
+  color: hsl(0, 0%, 3%);
+}
+
+app-shopping-edit {
+  margin-bottom: 16px;
+}
