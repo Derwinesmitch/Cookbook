@@ -8,3 +8,9 @@
   object-fit: cover;
   border-radius: 4px;
 }
+
+.recipe-items {
+  display: flex;
+  width: 45vw;
+  flex-wrap: wrap;
+}
