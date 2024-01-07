@@ -2,6 +2,7 @@
   max-width: 800px;
   margin: 20px;
   padding: 20px;
+  width: 95vw;
 }
 
 .recipes-container {
@@ -16,4 +17,6 @@
 
 .recipe-details-container {
   margin: 20px;
+  width: 30vw;
+  margin-top: -10vh;
 }
