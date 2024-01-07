@@ -1,0 +1,19 @@
+.mat-card.recipes-card {
+  max-width: 800px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.recipes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipes-list-container {
+  margin: 20px;
+}
+
+.recipe-details-container {
+  margin: 20px;
+}
