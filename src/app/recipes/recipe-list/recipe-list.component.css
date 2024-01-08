@@ -8,3 +8,15 @@
   object-fit: cover;
   border-radius: 4px;
 }
+
+.recipe-items {
+  display: flex;
+  width: 25vw;
+  flex-wrap: wrap;
+  height: 60vh;
+  overflow: scroll;
+  justify-content: space-evenly;
+}
+.recipe-items::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}

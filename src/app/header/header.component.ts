@@ -23,10 +23,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
   onSaveData() {
     this.dataStorageService.storeRecipes();
+    this.dataStorageService.storeShoppingList();
   }
 
   onFetchData() {
     this.dataStorageService.fetchRecipes().subscribe();
+    this.dataStorageService.fetchShoppingList();
   }
 
   // this method is used when logout button is clicked which calls the logout method

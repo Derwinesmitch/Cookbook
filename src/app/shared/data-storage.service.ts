@@ -4,12 +4,15 @@ import { RecipeService } from "../recipes/recipe.service";
 import { Recipe } from "../recipes/recipe.model";
 import { map, tap, take, exhaustMap } from "rxjs/operators";
 import { AuthService } from "../auth/auth.service";
+import { ShoppingListService } from "../shopping-list/shopping-list.service";
+import { Ingredient } from "./ingredient.model";
 @Injectable({ providedIn: "root" })
 export class DataStorageService {
   constructor(
     private http: HttpClient,
     private recipeService: RecipeService,
-    private authService: AuthService
+    private authService: AuthService,
+    private shoppingListService: ShoppingListService
   ) {}
 
   storeRecipes() {
@@ -42,5 +45,29 @@ export class DataStorageService {
           this.recipeService.setRecipes(recipes);
         })
       );
+  }
+
+  // stores the current shopping list in the firebase database
+  storeShoppingList() {
+    const ingredients = this.shoppingListService.getIngredients();
+    this.http
+      .put(
+        "https://cooking-recipe-project-default-rtdb.europe-west1.firebasedatabase.app/shopping-list.json",
+        ingredients
+      )
+      .subscribe((response) => {
+        console.log(response);
+      });
+  }
+
+  // retrieves the stored shopping list ingredients from the firebase database
+  fetchShoppingList() {
+    return this.http
+      .get<Ingredient[]>(
+        "https://cooking-recipe-project-default-rtdb.europe-west1.firebasedatabase.app/shopping-list.json"
+      )
+      .subscribe((ingredients) => {
+        this.shoppingListService.setIngredients(ingredients);
+      });
   }
 }

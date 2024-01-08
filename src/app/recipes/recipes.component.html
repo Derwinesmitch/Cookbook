@@ -1,10 +1,17 @@
 <mat-card class="recipes-card">
-  <div class="recipes-container">
-    <div class="recipe-list-container">
-      <app-recipe-list></app-recipe-list>
-    </div>
-    <div class="recipe-details-container">
-      <router-outlet></router-outlet>
+  <div>
+    <app-recipe-start></app-recipe-start>
+  </div>
+  <div class="recipes-with-button">
+    <button mat-button (click)="oneNewRecipe()">New Recipe</button>
+
+    <div class="recipes-container">
+      <div class="recipe-list-container">
+        <app-recipe-list></app-recipe-list>
+      </div>
+      <div class="recipe-details-container">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </mat-card>

@@ -2,6 +2,7 @@
   max-width: 800px;
   margin: 20px;
   padding: 20px;
+  width: 95vw;
 }
 
 .recipes-container {
@@ -12,8 +13,14 @@
 
 .recipes-list-container {
   margin: 20px;
+  width: 20vw;
 }
 
 .recipe-details-container {
-  margin: 20px;
+  /* margin: 20px;
+  margin-top: -10vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45vw;
 }
