@@ -13,13 +13,14 @@
 
 .recipes-list-container {
   margin: 20px;
+  width: 20vw;
 }
 
 .recipe-details-container {
   /* margin: 20px;
-  width: 30vw;
   margin-top: -10vh; */
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 45vw;
 }
