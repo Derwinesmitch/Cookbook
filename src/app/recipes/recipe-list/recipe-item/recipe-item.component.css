@@ -33,5 +33,9 @@
 }
 
 .list-group-item {
-  width: 10vw;
+  width: 8vw;
+}
+
+.image-responsive {
+  max-width: initial;
 }
