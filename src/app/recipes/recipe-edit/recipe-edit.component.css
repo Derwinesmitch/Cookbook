@@ -11,4 +11,16 @@ textarea.ng-invalid.ng-touched {
 }
 
 mat-card {
+  height: 55vh;
+}
+
+.cancelBtn {
+  background-color: transparent;
+  border: none;
+}
+
+.cancelCnt {
+  display: flex;
+  justify-content: end;
+  margin: 0.5rem;
 }

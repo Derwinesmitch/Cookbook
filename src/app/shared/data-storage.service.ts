@@ -13,7 +13,9 @@ export class DataStorageService {
     private recipeService: RecipeService,
     private authService: AuthService,
     private shoppingListService: ShoppingListService
-  ) {}
+  ) {
+    this.fetchRecipes();
+  }
 
   storeRecipes() {
     const recipes = this.recipeService.getRecipes();

@@ -3,6 +3,7 @@ import { NgForm } from "@angular/forms";
 import { AuthResponseData, AuthService } from "./auth.service";
 import { Observable } from "rxjs";
 import { Router } from "@angular/router";
+import { DataStorageService } from "../shared/data-storage.service";
 
 @Component({
   selector: "app-auth",
@@ -13,7 +14,21 @@ export class AuthComponent {
   isLoading = false;
   error: string = null;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private dataStorageService: DataStorageService
+  ) {}
+
+  ngOnInit() {
+    this.authService.user.subscribe((user) => {
+      if (user) {
+        this.dataStorageService.fetchRecipes().subscribe(() => {
+          this.router.navigate(["/recipes"]);
+        });
+      }
+    });
+  }
 
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
