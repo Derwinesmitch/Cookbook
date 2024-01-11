@@ -39,3 +39,11 @@ mat-menu {
 .detailsCnt {
   width: 20vw;
 }
+
+.moreDet {
+  display: flex;
+  flex-direction: column;
+}
+
+.duration {
+}
