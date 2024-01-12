@@ -8,6 +8,7 @@ import {
 } from "@angular/forms";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { RecipeService } from "../recipe.service";
+import { DataStorageService } from "src/app/shared/data-storage.service";
 @Component({
   selector: "app-recipe-edit",
   templateUrl: "./recipe-edit.component.html",
@@ -25,7 +26,8 @@ export class RecipeEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private recipeService: RecipeService,
-    private router: Router
+    private router: Router,
+    private dataStorageService: DataStorageService
   ) {}
 
   ngOnInit(): void {
@@ -48,6 +50,7 @@ export class RecipeEditComponent implements OnInit {
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
     }
+    this.updateRecipe();
     this.onCancel();
   }
 
@@ -69,6 +72,11 @@ export class RecipeEditComponent implements OnInit {
 
   onCancel() {
     this.router.navigate(["../"], { relativeTo: this.route });
+  }
+
+  updateRecipe() {
+    this.dataStorageService.storeRecipes();
+    this.dataStorageService.storeShoppingList();
   }
 
   private initForm() {
