@@ -12,6 +12,7 @@ textarea.ng-invalid.ng-touched {
 
 mat-card {
   height: 55vh;
+  overflow: scroll;
 }
 
 .cancelBtn {
