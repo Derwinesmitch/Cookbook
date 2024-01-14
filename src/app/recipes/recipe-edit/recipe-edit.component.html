@@ -46,26 +46,34 @@
           rows="6"
         ></textarea>
       </mat-form-field>
-      <mat-card-actions>
-        <button
-          type="submit"
-          class="btn btn-success"
-          [disabled]="!recipeForm.valid"
-        >
-          Save
-        </button>
-      </mat-card-actions>
+      <mat-form-field>
+        <label for="duration">Duration</label>
+        <textarea
+          type="text"
+          id="duration"
+          matInput
+          formControlName="duration"
+          rows="6"
+        ></textarea>
+      </mat-form-field>
+
       <div formArrayName="ingredients">
+        <p>Ingredients</p>
         <div
           *ngFor="let ingredientCtrl of ingredientsControls; let i = index"
           [formGroupName]="i"
           style="margin-top: 10px"
         >
           <mat-form-field>
-            <input type="text" matInput formControlName="name" />
+            <input type="text" id="name" matInput formControlName="name" />
           </mat-form-field>
           <mat-form-field>
-            <input type="number" matInput formControlName="amount" />
+            <input
+              type="number"
+              id="amount"
+              matInput
+              formControlName="amount"
+            />
           </mat-form-field>
           <button type="button" (click)="onDeleteIngredient(i)">X</button>
           <button type="button" (click)="onAddIngredient()">
@@ -74,5 +82,15 @@
         </div>
       </div>
     </mat-card-content>
+    <mat-card-actions>
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!recipeForm.valid"
+        (click)="updateRecipe()"
+      >
+        Save
+      </button>
+    </mat-card-actions>
   </form>
 </mat-card>

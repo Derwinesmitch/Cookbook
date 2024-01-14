@@ -7,7 +7,7 @@
   <div class="img-container">
     <div class="img-cover">
       <img
-        [src]="recipe.imagePath"
+        [src]="recipe.strMealThumb"
         alt="{{ recipe.name }}"
         class="image-responsive mat-card-image"
         style="max-height: 50px"
@@ -16,7 +16,7 @@
   </div>
   <div class="mat-card-content">
     <div class="pull-left">
-      <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+      <h4 class="list-group-item-heading">{{ recipe.strMeal }}</h4>
 
       <p class="list-group-item-text">{{ recipe.description }}</p>
     </div>
