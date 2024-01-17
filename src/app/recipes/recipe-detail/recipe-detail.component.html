@@ -1,25 +1,28 @@
 <div class="detailsCnt">
   <mat-card class="details">
-    <img
-      [src]="recipe.imagePath"
-      alt="{{ recipe.name }}"
-      style="max-height: 200px"
-    />
+    <img [src]="recipe.strImageSource" style="max-height: 200px" />
     <mat-card-header>
       <mat-card-title>{{ recipe.strMeal }}</mat-card-title>
       <mat-card-subtitle>{{ recipe.description }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div class="moreDet">
-        <p>{{ recipe.steps }}</p>
-        <p class="duration">{{ recipe.duration }}</p>
+        <p>{{ recipe.instructions }}</p>
+        <p class="category">{{ recipe.strCategory }}</p>
       </div>
     </mat-card-content>
     <mat-card-content>
       <ul>
-        <li *ngFor="let ingredient of recipe.ingredients">
-          {{ ingredient.name }} - {{ ingredient.amount }}
-        </li>
+        <ng-container *ngFor="let index of getIngredientIndices()">
+          <li
+            *ngIf="
+              recipe['strIngredient' + index] && recipe['strMeasure' + index]
+            "
+          >
+            {{ recipe["strIngredient" + index] }} -
+            {{ recipe["strMeasure" + index] }}
+          </li>
+        </ng-container>
       </ul>
 
       <button mat-icon-button [matMenuTriggerFor]="menu">
