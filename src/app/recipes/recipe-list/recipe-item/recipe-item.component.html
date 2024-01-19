@@ -4,6 +4,8 @@
   class="list-group-item clearfix mat-card"
   [routerLink]="[index]"
 >
+  <p class="list-group-item-text">{{ recipe.strArea }}</p>
+
   <div class="img-container">
     <div class="img-cover">
       <img
@@ -18,7 +20,6 @@
     <div class="pull-left">
       <h4 class="list-group-item-heading">{{ recipe.strMeal }}</h4>
 
-      <p class="list-group-item-text">{{ recipe.strArea }}</p>
       <p class="category">{{ recipe.strCategory }}</p>
 
       <p>{{ recipe.strTags }}</p>
