@@ -23,9 +23,19 @@ export class RecipeDetailComponent implements OnInit {
     });
   }
 
-  onAddToShoppingList() {
-    this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  getIngredientIndices(): number[] {
+    const indices = [];
+    for (let i = 1; i < 20; i++) {
+      if (this.recipe["strIngredient" + i] && this.recipe["strMeasure" + i]) {
+        indices.push(i);
+      }
+    }
+    return indices;
   }
+
+  // onAddToShoppingList() {
+  //   this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  // }
 
   onEditRecipe() {
     this.router.navigate(["edit"], { relativeTo: this.route });

@@ -6,6 +6,7 @@ import { map, tap, take, exhaustMap } from "rxjs/operators";
 import { AuthService } from "../auth/auth.service";
 import { ShoppingListService } from "../shopping-list/shopping-list.service";
 import { Ingredient } from "./ingredient.model";
+import { of } from "rxjs";
 @Injectable({ providedIn: "root" })
 export class DataStorageService {
   constructor(
@@ -15,6 +16,7 @@ export class DataStorageService {
     private shoppingListService: ShoppingListService
   ) {
     this.fetchRecipes();
+    // this.getAllRecipes();
   }
 
   storeRecipes() {
@@ -39,7 +41,7 @@ export class DataStorageService {
           return recipes.map((recipe) => {
             return {
               ...recipe,
-              ingredients: recipe.ingredients ? recipe.ingredients : [],
+              // ingredients: recipe.ingredients ? recipe.ingredients : [],
             };
           });
         }),
