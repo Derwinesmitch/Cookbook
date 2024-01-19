@@ -1,13 +1,32 @@
 <div class="detailsCnt">
   <mat-card class="details">
-    <img [src]="recipe.strImageSource" style="max-height: 200px" />
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onAddToShoppingList()">
+        To Shopping list
+      </button>
+      <button mat-menu-item (click)="onEditRecipe()">Edit recipe</button>
+      <button mat-menu-item (click)="onDeleteRecipe()">Delete Recipe</button>
+    </mat-menu>
+    <!-- <img [src]="recipe.strTags" style="max-height: 200px" /> -->
+    <div>
+      <div class="img">
+        <img
+          [src]="recipe.strMealThumb"
+          alt="{{ recipe.name }}"
+          class="image-responsive mat-card-image"
+        />
+      </div>
+    </div>
     <mat-card-header>
       <mat-card-title>{{ recipe.strMeal }}</mat-card-title>
       <mat-card-subtitle>{{ recipe.description }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div class="moreDet">
-        <p>{{ recipe.instructions }}</p>
+        <p>{{ recipe.strInstructions }}</p>
         <p class="category">{{ recipe.strCategory }}</p>
       </div>
     </mat-card-content>
@@ -24,17 +43,6 @@
           </li>
         </ng-container>
       </ul>
-
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="onAddToShoppingList()">
-          To Shopping list
-        </button>
-        <button mat-menu-item (click)="onEditRecipe()">Edit recipe</button>
-        <button mat-menu-item (click)="onDeleteRecipe()">Delete Recipe</button>
-      </mat-menu>
     </mat-card-content>
   </mat-card>
 </div>
