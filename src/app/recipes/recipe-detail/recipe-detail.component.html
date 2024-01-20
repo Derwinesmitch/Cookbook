@@ -3,6 +3,8 @@
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
+    <p class="category">{{ recipe.strCategory }}</p>
+
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="onAddToShoppingList()">
         To Shopping list
@@ -27,7 +29,6 @@
     <mat-card-content>
       <div class="moreDet">
         <p>{{ recipe.strInstructions }}</p>
-        <p class="category">{{ recipe.strCategory }}</p>
       </div>
     </mat-card-content>
     <mat-card-content>
