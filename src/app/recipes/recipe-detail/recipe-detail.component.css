@@ -56,4 +56,6 @@ mat-menu {
 .category {
   margin-top: 2px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
 }
