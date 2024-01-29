@@ -35,3 +35,7 @@
 .list-group-item {
   width: 8vw;
 }
+
+.tags {
+  display: flex;
+}
