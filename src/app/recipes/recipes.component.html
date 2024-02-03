@@ -1,5 +1,5 @@
 <mat-card class="recipes-card">
-  <div>
+  <div *ngIf="!recipeSelected">
     <app-recipe-start></app-recipe-start>
   </div>
   <div class="recipes-with-button">
