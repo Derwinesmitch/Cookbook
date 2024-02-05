@@ -78,29 +78,33 @@ export class RecipeEditComponent implements OnInit {
     let recipeDescription = "";
     let recipeIngredients = new FormArray([]);
     let recipeSteps = "";
-    let recipeDuration = "";
+    let recipeTags = "";
 
-    // if (this.editMode) {
-    //   const recipe = this.recipeService.getRecipe(this.id);
-    //   recipeName = recipe.name;
-    //   recipeImagePath = recipe.imagePath;
-    //   recipeDescription = recipe.description;
-    //   recipeSteps = recipe.steps;
-    //   recipeDuration = recipe.duration;
-    //   if (recipe.ingredients && recipe.ingredients.length > 0) {
-    //     for (let ingredient of recipe.ingredients) {
-    //       recipeIngredients.push(
-    //         new FormGroup({
-    //           name: new FormControl(ingredient.name, Validators.required),
-    //           amount: new FormControl(ingredient.amount, [
-    //             Validators.required,
-    //             Validators.pattern(/^[1-9]+[0-9]*$/),
-    //           ]),
-    //         })
-    //       );
-    //     }
-    //   }
-    // }
+    if (this.editMode) {
+      const recipe = this.recipeService.getRecipe(this.id);
+      recipeName = recipe.strMeal;
+      recipeImagePath = recipe.strMealThumb;
+      recipeDescription = recipe.strCategory;
+      recipeSteps = recipe.strInstructions;
+      recipeTags = recipe.strTags;
+
+      for (let i = 1; i <= 20; i++) {
+        const ingredientName = recipe[`strIngredient${i}`];
+        const ingredientAmount = recipe[`strMeasure${i}`];
+
+        if (ingredientName && ingredientName.trim() !== "") {
+          recipeIngredients.push(
+            new FormGroup({
+              name: new FormControl(ingredientName, Validators.required),
+              amount: new FormControl(ingredientAmount, [
+                Validators.required,
+                Validators.pattern(/^[1-9]+[0-9]*$/),
+              ]),
+            })
+          );
+        }
+      }
+    }
 
     recipeIngredients.push(
       new FormGroup({
@@ -117,7 +121,7 @@ export class RecipeEditComponent implements OnInit {
       description: new FormControl(recipeDescription, Validators.required),
       ingredients: recipeIngredients,
       steps: new FormControl(recipeSteps, Validators.required),
-      duration: new FormControl(recipeDuration, Validators.required),
+      tags: new FormControl(recipeTags, Validators.required),
     });
   }
 }
