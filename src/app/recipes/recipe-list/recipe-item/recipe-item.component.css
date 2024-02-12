@@ -23,6 +23,7 @@
 
 .img-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-top: -3vh;
 }
@@ -33,4 +34,13 @@
 
 .list-group-item {
   width: 8vw;
+}
+
+.tags {
+  display: flex;
+  justify-content: center;
+}
+
+.list-group-item-area {
+  display: flex;
 }

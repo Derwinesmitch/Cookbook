@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from "@angular/router";
   styleUrls: ["./recipes.component.css"],
 })
 export class RecipesComponent implements OnInit {
+  recipeSelected: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -16,6 +17,10 @@ export class RecipesComponent implements OnInit {
 
   ngOnInit(): void {
     // this.getAllRecipes();
+  }
+
+  onRecipeSelected(selected: boolean) {
+    this.recipeSelected = selected;
   }
 
   oneNewRecipe() {

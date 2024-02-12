@@ -4,9 +4,9 @@
   class="list-group-item clearfix mat-card"
   [routerLink]="[index]"
 >
-  <p class="list-group-item-text">{{ recipe.strArea }}</p>
-
   <div class="img-container">
+    <p class="list-group-item-area">{{ recipe.strArea }}</p>
+
     <div class="img-cover">
       <img
         [src]="recipe.strMealThumb"
@@ -22,7 +22,11 @@
 
       <p class="category">{{ recipe.strCategory }}</p>
 
-      <p>{{ recipe.strTags }}</p>
+      <div>
+        <button class="tags" mat-raised-button>
+          {{ recipe.strTags }}
+        </button>
+      </div>
     </div>
   </div>
 </a>
