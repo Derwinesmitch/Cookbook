@@ -4,9 +4,7 @@
   </mat-nav-list>
 
   <mat-nav-list *ngIf="!isAuthenticated">
-    <a mat-list-item routerLink="/auth" routerLinkActive="active"
-      >Authenticate</a
-    >
+    <a mat-list-item routerLink="/auth" routerLinkActive="active"></a>
   </mat-nav-list>
   <mat-nav-list *ngIf="isAuthenticated">
     <a mat-list-item routerLink="/recipes" routerLinkActive="active">Recipes</a>
