@@ -43,4 +43,5 @@
 
 .list-group-item-area {
   display: flex;
+  justify-content: end;
 }
