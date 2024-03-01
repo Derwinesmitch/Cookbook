@@ -4,27 +4,35 @@
   class="list-group-item clearfix mat-card"
   [routerLink]="[index]"
 >
-  <div class="img-container">
-    <p class="list-group-item-area">{{ recipe.strArea }}</p>
-
-    <div class="img-cover">
-      <img
-        [src]="recipe.strMealThumb"
-        class="image-responsive mat-card-image"
-        style="max-height: 50px"
-      />
+  <div class="both-cont">
+    <div class="tag-container">
+      <img *ngIf="flagUrl" [src]="flagUrl" class="flag-image" />
+    </div>
+    <div class="img-container">
+      <div class="img-cover">
+        <img
+          [src]="recipe.strMealThumb"
+          class="image-responsive mat-card-image"
+          style="max-height: 50px"
+        />
+      </div>
     </div>
   </div>
+
   <div class="mat-card-content">
     <div class="pull-left">
       <h4 class="list-group-item-heading">{{ recipe.strMeal }}</h4>
 
       <p class="category">{{ recipe.strCategory }}</p>
 
-      <div>
-        <button class="tags" mat-raised-button>
-          {{ recipe.strTags }}
-        </button>
+      <div class="tag-list">
+        <ng-container *ngIf="recipe.strTags">
+          <ng-container *ngFor="let tag of recipe.strTags.split(',')">
+            <button class="tags" mat-raised-button>
+              {{ tag.trim() }}
+            </button>
+          </ng-container>
+        </ng-container>
       </div>
     </div>
   </div>
