@@ -27,5 +27,5 @@
 
 .recipes-with-button {
   width: fit-content;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
