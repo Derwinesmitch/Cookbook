@@ -19,13 +19,14 @@
 
 .img-cover {
   width: 80%;
+  position: relative;
 }
 
 .img-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   margin-top: -3vh;
+  position: relative;
 }
 
 .list-group-item-heading {
@@ -39,9 +40,18 @@
 .tags {
   display: flex;
   justify-content: center;
+  font-size: 0.8rem;
 }
 
 .list-group-item-area {
   display: flex;
   justify-content: end;
+}
+
+.flag-image {
+  display: flex;
+  width: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
