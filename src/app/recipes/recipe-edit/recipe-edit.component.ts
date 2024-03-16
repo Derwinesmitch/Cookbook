@@ -79,6 +79,7 @@ export class RecipeEditComponent implements OnInit {
     let recipeIngredients = new FormArray([]);
     let recipeSteps = "";
     let recipeTags = "";
+    let recipeArea = "";
 
     if (this.editMode) {
       const recipe = this.recipeService.getRecipe(this.id);
@@ -87,6 +88,7 @@ export class RecipeEditComponent implements OnInit {
       recipeDescription = recipe.strCategory;
       recipeSteps = recipe.strInstructions;
       recipeTags = recipe.strTags;
+      recipeArea = recipe.strArea;
 
       for (let i = 1; i <= 20; i++) {
         const ingredientName = recipe[`strIngredient${i}`];
@@ -122,6 +124,7 @@ export class RecipeEditComponent implements OnInit {
       ingredients: recipeIngredients,
       steps: new FormControl(recipeSteps, Validators.required),
       tags: new FormControl(recipeTags, Validators.required),
+      area: new FormControl(recipeArea, Validators.required),
     });
   }
 }

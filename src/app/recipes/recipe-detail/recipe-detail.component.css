@@ -45,12 +45,9 @@ mat-menu {
   width: 20vw;
 }
 
-.moreDet {
+.instructions {
   display: flex;
   flex-direction: column;
-}
-
-.duration {
 }
 
 .category {

@@ -6,13 +6,12 @@
     <p class="category">{{ recipe.strCategory }}</p>
 
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="onAddToShoppingList()">
+      <!-- <button mat-menu-item (click)="onAddToShoppingList()">
         Add To Shopping list
-      </button>
+      </button> -->
       <button mat-menu-item (click)="onEditRecipe()">Edit recipe</button>
       <button mat-menu-item (click)="onDeleteRecipe()">Delete Recipe</button>
     </mat-menu>
-    <!-- <img [src]="recipe.strTags" style="max-height: 200px" /> -->
     <div>
       <div class="img">
         <img
@@ -25,7 +24,7 @@
       <mat-card-title>{{ recipe.strMeal }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <div class="moreDet">
+      <div class="insturctions">
         <p>{{ recipe.strInstructions }}</p>
       </div>
     </mat-card-content>
